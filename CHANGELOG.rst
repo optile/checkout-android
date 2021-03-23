@@ -1,6 +1,10 @@
 Changelog - Android SDK
 -----------------------
 
+**Version checkout-android 0.70.0**
+
+Version **0.70.0** is a major release whereby the package names have changed from com.payoneer.mrs.payment to com.payoneer.checkout
+
 **Version android-sdk 0.60.0**
 
 Version **0.60.0** is a major release, it changes the name optile to payoneer.
