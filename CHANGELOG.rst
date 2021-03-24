@@ -7,6 +7,7 @@ Version **0.70.0** is a major release whereby the package names have changed fro
 This release also includes changing the repository from "android-sdk" to "checkout-android".
 
 **Feature**
+
 * [PCX-1421] - Change android-sdk package structure and example apps
 * [PCX-1422] - Install new example apps for testing on Google PlayStore
 * [PCX-1227] - Update RXJava/Android versions in the example apps
