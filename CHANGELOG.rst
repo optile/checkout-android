@@ -3,7 +3,16 @@ Changelog - Android SDK
 
 **Version checkout-android 0.70.0**
 
-Version **0.70.0** is a major release whereby the package names have changed from com.payoneer.mrs.payment to com.payoneer.checkout
+Version **0.70.0** is a major release whereby the package names have changed from com.payoneer.mrs.payment to com.payoneer.checkout.
+This release also includes changing the repository from "android-sdk" to "checkout-android".
+
+**Feature**
+* [PCX-1421] - Change android-sdk package structure and example apps
+* [PCX-1422] - Install new example apps for testing on Google PlayStore
+* [PCX-1227] - Update RXJava/Android versions in the example apps
+* [PCX-1399] - Update Android-SDK list request body for automated testing
+* [PCX-1416] - Change package names
+* [PCX-1430] - Rename repository to checkout-android
 
 **Version android-sdk 0.60.0**
 
