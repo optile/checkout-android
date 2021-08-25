@@ -16,6 +16,7 @@ import java.util.Objects;
 
 import com.payoneer.checkout.core.PaymentException;
 import com.payoneer.checkout.form.Operation;
+import com.payoneer.checkout.localization.InteractionMessage;
 import com.payoneer.checkout.localization.Localization;
 import com.payoneer.checkout.model.ErrorInfo;
 import com.payoneer.checkout.model.Interaction;
@@ -195,7 +196,7 @@ final class ChargePaymentPresenter extends BasePaymentPresenter implements Payme
             case InteractionCode.TRY_OTHER_ACCOUNT:
             case InteractionCode.TRY_OTHER_NETWORK:
             case InteractionCode.RETRY:
-                showMessageAndCloseWithErrorCode(result);
+                showErrorAndCloseWithErrorCode(result);
                 break;
             default:
                 closeWithErrorCode(result);
@@ -226,8 +227,11 @@ final class ChargePaymentPresenter extends BasePaymentPresenter implements Payme
         networkService.processPayment(operation);
     }
 
-    private void showMessageAndCloseWithErrorCode(PaymentResult result) {
+    private void showErrorAndCloseWithErrorCode(PaymentResult result) {
         Interaction interaction = result.getInteraction();
+        String operationType = session != null ? session.getListOperationType() : null;
+        InteractionMessage message = new InteractionMessage(interaction, operationType);
+
         view.setPaymentResult(RESULT_CODE_ERROR, result);
         PaymentDialogFragment.PaymentDialogListener listener = new PaymentDialogFragment.PaymentDialogListener() {
             @Override
@@ -245,7 +249,7 @@ final class ChargePaymentPresenter extends BasePaymentPresenter implements Payme
                 view.close();
             }
         };
-        view.showInteractionDialog(createInteractionMessage(interaction, session), listener);
+        view.showInteractionDialog(message, listener);
     }
 
     private void loadPaymentSession() {

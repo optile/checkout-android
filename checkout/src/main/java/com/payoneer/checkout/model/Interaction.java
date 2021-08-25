@@ -12,7 +12,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * This class is designed to hold interaction information providing a recommendation on how to proceed.
+ * This class is designed to hold interaction information that prescribes further reaction of merchant portal to this transaction or operation.
  */
 @Getter
 @Setter

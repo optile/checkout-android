@@ -12,10 +12,7 @@ import static com.payoneer.checkout.ui.PaymentActivityResult.RESULT_CODE_ERROR;
 import static com.payoneer.checkout.ui.PaymentActivityResult.RESULT_CODE_PROCEED;
 
 import com.payoneer.checkout.core.PaymentException;
-import com.payoneer.checkout.localization.InteractionMessage;
-import com.payoneer.checkout.model.Interaction;
 import com.payoneer.checkout.ui.PaymentResult;
-import com.payoneer.checkout.ui.model.PaymentSession;
 import com.payoneer.checkout.ui.service.NetworkService;
 import com.payoneer.checkout.ui.service.NetworkServiceLookup;
 import com.payoneer.checkout.util.PaymentResultHelper;
@@ -72,12 +69,5 @@ abstract class BasePaymentPresenter {
             throw new PaymentException("Missing NetworkService for: " + code + ", " + paymentMethod);
         }
         return service;
-    }
-
-    InteractionMessage createInteractionMessage(Interaction interaction, PaymentSession session) {
-        if (session == null) {
-            return InteractionMessage.fromInteraction(interaction);
-        }
-        return InteractionMessage.fromOperationFlow(interaction, session.getListOperationType());
     }
 }

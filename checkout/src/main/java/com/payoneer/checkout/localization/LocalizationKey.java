@@ -57,6 +57,9 @@ public final class LocalizationKey {
     public final static String MESSAGES_UNSAVED_TITLE = "messages.unsaved.title";
     public final static String MESSAGES_UNSAVED_TEXT = "messages.unsaved.text";
 
+    public final static String INTERACTION_UPDATE_PROCEED_PENDING_TITLE = "interaction.UPDATE.PROCEED.PENDING.title";
+    public final static String INTERACTION_UPDATE_PROCEED_PENDING_TEXT = "interaction.UPDATE.PROCEED.PENDING.text";
+
     public final static String LABEL_TITLE = "title";
     public final static String LABEL_TEXT = "text";
 

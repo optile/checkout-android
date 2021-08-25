@@ -20,6 +20,7 @@ import com.payoneer.checkout.model.InteractionReason;
 import com.payoneer.checkout.sharedtest.checkout.ChargePaymentHelper;
 import com.payoneer.checkout.sharedtest.checkout.PaymentDialogHelper;
 import com.payoneer.checkout.sharedtest.checkout.PaymentListHelper;
+import com.payoneer.checkout.sharedtest.view.UiDeviceHelper;
 import com.payoneer.checkout.ui.page.PaymentListActivity;
 
 import androidx.test.espresso.IdlingResource;

@@ -8,8 +8,6 @@
 
 package com.payoneer.checkout.localization;
 
-import static com.payoneer.checkout.localization.LocalizationKey.LABEL_TEXT;
-import static com.payoneer.checkout.localization.LocalizationKey.LABEL_TITLE;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
@@ -20,11 +18,6 @@ import java.util.Map;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
-
-import com.payoneer.checkout.model.Interaction;
-import com.payoneer.checkout.model.InteractionCode;
-import com.payoneer.checkout.model.InteractionReason;
-import com.payoneer.checkout.model.NetworkOperationType;
 
 import android.content.Context;
 import androidx.test.core.app.ApplicationProvider;
@@ -77,51 +70,6 @@ public final class LocalizationTest {
         assertNull(loc.getSharedTranslation("foo"));
     }
 
-    @Test
-    public void translateInteractionMessage_fromInteraction() {
-        LocalizationHolder shared = createInteractionLocalizationHolder();
-        Localization.setInstance(new Localization(shared, null));
-
-        Interaction interaction = new Interaction(InteractionCode.PROCEED, InteractionReason.OK);
-        InteractionMessage message = InteractionMessage.fromInteraction(interaction);
-
-        String title = Localization.translateInteractionMessage(message, LABEL_TITLE);
-        String text = Localization.translateInteractionMessage(message, LABEL_TEXT);
-
-        assertEquals("proceed.ok.title", title);
-        assertEquals("proceed.ok.text", text);
-    }
-
-    @Test
-    public void translateInteractionMessage_fromOperationFlow() {
-        LocalizationHolder shared = createInteractionLocalizationHolder();
-        Localization.setInstance(new Localization(shared, null));
-
-        Interaction interaction = new Interaction(InteractionCode.PROCEED, InteractionReason.PENDING);
-        InteractionMessage message = InteractionMessage.fromOperationFlow(interaction, NetworkOperationType.UPDATE);
-
-        String title = Localization.translateInteractionMessage(message, LABEL_TITLE);
-        String text = Localization.translateInteractionMessage(message, LABEL_TEXT);
-
-        assertEquals("update.proceed.pending.title", title);
-        assertEquals("update.proceed.pending.text", text);
-    }
-
-    @Test
-    public void translateInteractionMessage_fromDeleteFlow() {
-        LocalizationHolder shared = createInteractionLocalizationHolder();
-        Localization.setInstance(new Localization(shared, null));
-
-        Interaction interaction = new Interaction(InteractionCode.PROCEED, InteractionReason.OK);
-        InteractionMessage message = InteractionMessage.fromDeleteFlow(interaction);
-
-        String title = Localization.translateInteractionMessage(message, LABEL_TITLE);
-        String text = Localization.translateInteractionMessage(message, LABEL_TEXT);
-
-        assertEquals("delete.proceed.ok.title", title);
-        assertEquals("delete.proceed.ok.text", text);
-    }
-
     /**
      * Create a map based localization holder with one key value pair
      *
@@ -135,22 +83,6 @@ public final class LocalizationTest {
         for (int i = 0; i < nrTranslations; i++) {
             map.put(mapKey + i, mapValue + i);
         }
-        return new MapLocalizationHolder(map);
-    }
-
-    /**
-     * Create a localization holder for testing flow specific interaction translations
-     */
-    public static MapLocalizationHolder createInteractionLocalizationHolder() {
-        Map<String, String> map = new HashMap<>();
-        map.put("interaction.PROCEED.OK.title", "proceed.ok.title");
-        map.put("interaction.PROCEED.OK.text", "proceed.ok.text");
-        map.put("interaction.PROCEED.PENDING.title", "proceed.pending.title");
-        map.put("interaction.PROCEED.PENDING.text", "proceed.pending.text");
-        map.put("interaction.UPDATE.PROCEED.PENDING.title", "update.proceed.pending.title");
-        map.put("interaction.UPDATE.PROCEED.PENDING.text", "update.proceed.pending.text");
-        map.put("interaction.DELETE.PROCEED.OK.title", "delete.proceed.ok.title");
-        map.put("interaction.DELETE.PROCEED.OK.text", "delete.proceed.ok.text");
         return new MapLocalizationHolder(map);
     }
 

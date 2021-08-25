@@ -6,6 +6,9 @@
     <string name="error_default_title">Oops!</string>
     <string name="error_default_text">An error occurred while handling your payment. Please try again.</string>
 
+    <string name="interaction_update_proceed_pending_title">Payment method pending</string>
+    <string name="interaction_update_proceed_pending_text">Please refresh or check back later for updates.</string>
+
     <string name="messages_unsaved_title">Unsaved changes</string>
     <string name="messages_unsaved_text">Are you sure you want to refresh? Your unsaved changes will be lost.</string>
 

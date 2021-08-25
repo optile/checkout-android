@@ -82,19 +82,19 @@ public final class Localization {
      * If the optional operationType in the message is null then fallback to the
      * regular localization for the interaction.
      *
-     * @param message interaction message to be translated
+     * @param interactionMessage interaction message to be translated
      * @param labelType type of the interaction label that is required, either LABEL_TEXT or LABEL_TITLE
      * @return translation of the interaction or null if not found
      */
-    public static String translateInteractionMessage(InteractionMessage message, String labelType) {
+    public static String translateInteractionMessage(InteractionMessage interactionMessage, String labelType) {
         Localization loc = getInstance();
         if (loc == null) {
             return null;
         }
-        Interaction interaction = message.getInteraction();
-        if (message.hasFlow()) {
-            String interactionKey = LocalizationKey.interactionKey(interaction, message.getFlow(), labelType);
-            String text = loc.getSharedTranslation(interactionKey);
+        Interaction interaction = interactionMessage.getInteraction();
+        if (interactionMessage.hasOperationType()) {
+            String operationType = interactionMessage.getOperationType();
+            String text = loc.getSharedTranslation(LocalizationKey.interactionKey(interaction, operationType, labelType));
             if (!TextUtils.isEmpty(text)) {
                 return text;
             }

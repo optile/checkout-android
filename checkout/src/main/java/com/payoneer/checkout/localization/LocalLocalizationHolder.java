@@ -17,6 +17,8 @@ import static com.payoneer.checkout.localization.LocalizationKey.ERROR_CONNECTIO
 import static com.payoneer.checkout.localization.LocalizationKey.ERROR_CONNECTION_TITLE;
 import static com.payoneer.checkout.localization.LocalizationKey.ERROR_DEFAULT_TEXT;
 import static com.payoneer.checkout.localization.LocalizationKey.ERROR_DEFAULT_TITLE;
+import static com.payoneer.checkout.localization.LocalizationKey.INTERACTION_UPDATE_PROCEED_PENDING_TEXT;
+import static com.payoneer.checkout.localization.LocalizationKey.INTERACTION_UPDATE_PROCEED_PENDING_TITLE;
 import static com.payoneer.checkout.localization.LocalizationKey.LIST_HEADER_ACCOUNTS_UPDATE;
 import static com.payoneer.checkout.localization.LocalizationKey.LIST_HEADER_NETWORKS_UPDATE;
 import static com.payoneer.checkout.localization.LocalizationKey.MESSAGES_UNSAVED_TEXT;
@@ -53,6 +55,9 @@ public final class LocalLocalizationHolder extends MapLocalizationHolder {
 
         map.put(LIST_HEADER_ACCOUNTS_UPDATE, context.getString(R.string.list_header_accounts_update));
         map.put(LIST_HEADER_NETWORKS_UPDATE, context.getString(R.string.list_header_networks_update));
+
+        map.put(INTERACTION_UPDATE_PROCEED_PENDING_TITLE, context.getString(R.string.interaction_update_proceed_pending_title));
+        map.put(INTERACTION_UPDATE_PROCEED_PENDING_TEXT, context.getString(R.string.interaction_update_proceed_pending_text));
 
         map.put(MESSAGES_UNSAVED_TITLE, context.getString(R.string.messages_unsaved_title));
         map.put(MESSAGES_UNSAVED_TEXT, context.getString(R.string.messages_unsaved_text));
