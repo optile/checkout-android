@@ -30,7 +30,7 @@ public final class PresetCard extends PaymentCard {
     private final String buttonKey;
 
     public PresetCard(PresetAccount account, String buttonKey, ExtraElements extraElements) {
-        super(true, extraElements);
+        super(extraElements);
         this.account = account;
         this.buttonKey = buttonKey;
     }

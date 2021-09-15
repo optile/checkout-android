@@ -12,6 +12,7 @@ import com.payoneer.checkout.R;
 import com.payoneer.checkout.util.PaymentUtils;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ViewSwitcher;
 
 /**
@@ -19,6 +20,8 @@ import android.widget.ViewSwitcher;
  */
 class IconView {
     private final ViewSwitcher switcher;
+    private final ImageView iconView0;
+    private final ImageView iconView1;
 
     /**
      * Construct a new IconView
@@ -27,7 +30,17 @@ class IconView {
      */
     IconView(View parent) {
         switcher = parent.findViewById(R.id.viewswitcher_icon);
+        iconView0 = parent.findViewById(R.id.image_icon0);
+        iconView1 = parent.findViewById(R.id.image_icon1);
         PaymentUtils.setTestId(switcher, "card", "iconview");
+    }
+
+    void setIconResource(int index, int resourceId) {
+        if (index == 0) {
+            iconView0.setImageResource(resourceId);
+        } else {
+            iconView1.setImageResource(resourceId);
+        }
     }
 
     void setListener(final IconClickListener listener) {
@@ -39,13 +52,14 @@ class IconView {
         });
     }
 
-    void hide() {
-        switcher.setVisibility(View.GONE);
+    void setVisible(boolean visible) {
+        switcher.setVisibility(visible ? View.VISIBLE : View.GONE);
     }
 
     void showIcon(int index) {
-        switcher.setVisibility(View.VISIBLE);
-        switcher.setDisplayedChild(index);
+        if (switcher.getDisplayedChild() != index) {
+            switcher.setDisplayedChild(index);
+        }
     }
 
     interface IconClickListener {

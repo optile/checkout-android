@@ -55,9 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/pmborder_small">
 
-                <include layout="@layout/view_icon_update" />
-
-                <include layout="@layout/view_icon_update" />
+                <include layout="@layout/view_icon" />
             </FrameLayout>
         </LinearLayout>
 

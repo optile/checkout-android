@@ -93,7 +93,7 @@ public final class BasicNetworkService extends NetworkService {
 
     @Override
     public void deleteAccount(DeleteAccount account) {
-        this.operationType = UPDATE;
+        this.operationType = account.getOperationType();
         listener.showProgress(true);
         operationService.deleteAccount(account);
     }

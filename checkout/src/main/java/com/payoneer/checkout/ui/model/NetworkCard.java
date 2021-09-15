@@ -29,7 +29,7 @@ public final class NetworkCard extends PaymentCard {
     private final SmartSwitch smartSwitch;
 
     public NetworkCard(ExtraElements extraElements) {
-        super(false, extraElements);
+        super(extraElements);
         this.networks = new ArrayList<>();
         this.smartSwitch = new SmartSwitch(networks);
     }

@@ -11,6 +11,7 @@ package com.payoneer.checkout.ui.list;
 import com.google.android.material.card.MaterialCardView;
 import com.payoneer.checkout.R;
 import com.payoneer.checkout.ui.model.AccountCard;
+import com.payoneer.checkout.ui.model.AccountCard.AccountIcon;
 import com.payoneer.checkout.ui.widget.FormWidget;
 import com.payoneer.checkout.util.PaymentUtils;
 
@@ -25,8 +26,8 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder;
  */
 public final class AccountCardViewHolder extends PaymentCardViewHolder {
 
-    private final static int ICON_PENCIL = 0;
-    private final static int ICON_TRASHCAN = 1;
+    private final static int ICON_COLLAPSED = 0;
+    private final static int ICON_EXPANDED = 1;
 
     private final TextView titleView;
     private final TextView subtitleView;
@@ -74,27 +75,36 @@ public final class AccountCardViewHolder extends PaymentCardViewHolder {
         for (FormWidget widget : widgets.values()) {
             bindFormWidget(widget);
         }
+        bindAccountIcon(card.getAccountIcon());
     }
 
     @Override
     void expand(boolean expand) {
         super.expand(expand);
-
         AccountCard accountCard = (AccountCard) paymentCard;
         if (accountCard.isCheckable()) {
             cardView.setChecked(expand);
         }
+        int icon = (expand) ? ICON_EXPANDED : ICON_COLLAPSED;
+        iconView.showIcon(icon);
+    }
 
-        if (accountCard.isDeletable()) {
-            iconView.showIcon(expand ? ICON_TRASHCAN : ICON_PENCIL);
+    private void bindAccountIcon(AccountIcon icon) {
+        if (icon != null) {
+            iconView.setVisible(true);
+            iconView.setIconResource(ICON_COLLAPSED, icon.getCollapsedResId());
+            iconView.setIconResource(ICON_EXPANDED, icon.getExpandedResId());
+        } else {
+            iconView.setVisible(false);
         }
     }
 
     private void handleIconClicked(int index) {
-        if (index == 0) {
-            cardHandler.onCardClicked();
-        } else {
+        boolean deletable = ((AccountCard) paymentCard).isDeletable();
+        if (index == ICON_EXPANDED && deletable) {
             cardHandler.onDeleteClicked();
+        } else {
+            cardHandler.onCardClicked();
         }
     }
 }

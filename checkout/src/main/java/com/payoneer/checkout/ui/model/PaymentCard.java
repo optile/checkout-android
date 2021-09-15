@@ -29,22 +29,39 @@ import android.text.TextUtils;
  */
 public abstract class PaymentCard {
 
-    private final boolean checkable;
     private ExtraElements extraElements;
+    private boolean checkable;
     private boolean hideInputForm;
+    private boolean disabled;
     final List<String> userInputTypes;
 
     /**
      * Construct a PaymentCard, when a card is checkable and marked as checked
      * a highlighted border is drawn around the card.
      *
-     * @param checkable is the PaymentCard checkable
      * @param extraElements optional elements to be shown in this PaymentCard
      */
-    public PaymentCard(boolean checkable, ExtraElements extraElements) {
-        this.checkable = checkable;
+    public PaymentCard(ExtraElements extraElements) {
         this.extraElements = extraElements;
         this.userInputTypes = new ArrayList<>();
+    }
+
+    public void setDisabled(final boolean disabled) {
+        this.disabled = disabled;
+    }
+
+    public boolean isDisabled() {
+        return disabled;
+    }
+
+    /**
+     * Mark this card as checkable, if the card is checkable and checked
+     * a highlighted border is drawn around the card.
+     *
+     * @param checkable true if checkable, false otherwise
+     */
+    public void setCheckable(final boolean checkable) {
+        this.checkable = checkable;
     }
 
     /**
@@ -154,12 +171,12 @@ public abstract class PaymentCard {
     }
 
     /**
-     * Does this PaymentCard has an empty form
+     * Does this PaymentCard has any form elements
      *
-     * @return true when the input form is empty, false otherwise
+     * @return true when the form has elements, false otherwise
      */
-    public boolean hasEmptyInputForm() {
-        return false;
+    public boolean hasFormElements() {
+        return (getInputElements().size() > 0) || (getTopExtraElements().size() > 0) || (getBottomExtraElements().size() > 0);
     }
 
     /**

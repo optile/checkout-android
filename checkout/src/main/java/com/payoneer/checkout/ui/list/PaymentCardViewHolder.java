@@ -81,7 +81,7 @@ public abstract class PaymentCardViewHolder extends RecyclerView.ViewHolder {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cardHandler.onCardClicked();
+                handleCardClicked(v);
             }
         });
     }
@@ -260,6 +260,12 @@ public abstract class PaymentCardViewHolder extends RecyclerView.ViewHolder {
             }
         }
         return false;
+    }
+
+    void handleCardClicked(View view) {
+        if (!paymentCard.isDisabled()) {
+            cardHandler.onCardClicked();
+        }
     }
 
     void expand(boolean expand) {

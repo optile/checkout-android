@@ -32,16 +32,19 @@ public class DeleteAccount implements Parcelable {
         }
     };
     private final URL url;
+    private final String operationType;
     private final DeregistrationData deregistrationData;
 
-    public DeleteAccount(URL url) {
+    public DeleteAccount(URL url, String operationType) {
         this.url = url;
+        this.operationType = operationType;
         deregistrationData = new DeregistrationData();
         deregistrationData.setDeleteRegistration(true);
         deregistrationData.setDeleteRecurrence(true);
     }
 
     private DeleteAccount(Parcel in) {
+        this.operationType = in.readString();
         this.url = (URL) in.readSerializable();
 
         try {
@@ -61,8 +64,8 @@ public class DeleteAccount implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel out, int flags) {
+        out.writeString(operationType);
         out.writeSerializable(url);
-
         GsonHelper gson = GsonHelper.getInstance();
         out.writeString(gson.toJson(deregistrationData));
     }
@@ -70,6 +73,10 @@ public class DeleteAccount implements Parcelable {
     public String toJson() {
         GsonHelper gson = GsonHelper.getInstance();
         return gson.toJson(deregistrationData);
+    }
+
+    public String getOperationType() {
+        return operationType;
     }
 
     public URL getURL() {

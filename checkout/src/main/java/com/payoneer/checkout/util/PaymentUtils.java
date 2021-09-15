@@ -37,11 +37,22 @@ public final class PaymentUtils {
     /**
      * Check if the Boolean object is true, the Boolean object may be null.
      *
-     * @param val the value to check
+     * @param value the value to check
      * @return true when the val is not null and true
      */
-    public static boolean isTrue(Boolean val) {
-        return val != null && val;
+    public static boolean isTrue(Boolean value) {
+        return value != null && value;
+    }
+
+    /**
+     * Return the boolean value given the Boolean Object.
+     * If the Object is null then return the default value.
+     *
+     * @param value the value to check
+     * @return defaultValue if value is null, else the boolean value
+     */
+    public static boolean toBoolean(Boolean value, boolean defaultValue) {
+        return (value == null) ? defaultValue : value.booleanValue();
     }
 
     /**
