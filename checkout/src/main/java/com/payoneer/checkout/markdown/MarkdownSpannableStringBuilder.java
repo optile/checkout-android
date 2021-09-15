@@ -21,7 +21,11 @@ import android.text.style.ClickableSpan;
  */
 public final class MarkdownSpannableStringBuilder {
 
-    private final static String MARKDOWN_LINK_REGEX = "\\[(?<text>[^\\]]+)\\]\\((?<url>[^ \\]]+)(?:[ ]\"(?<title>[^\\]]+)\")?\\)";
+    // Named groups removed from regex to support API 25 and less.
+    // Example regex with named groups:
+    // "\\[(?<text>[^\\]]+)\\]\\((?<url>[^ \\]]+)(?:[ ]\"(?<title>[^\\]]+)\")?\\)"
+    private final static String MARKDOWN_LINK_REGEX = "\\[([^]]+)]\\(([^ \\]]+)([ ]\"([^]]+)\")?\\)";
+    private final static int GROUP_COUNT = 4;
 
     /**
      * Convenience static method to build a SpannableStringBuilder from the provided text.
@@ -57,6 +61,9 @@ public final class MarkdownSpannableStringBuilder {
     }
 
     private SpannableStringBuilder parseMarkdownLink(Matcher matcher, SpannableStringBuilder builder) {
+        if (matcher.groupCount() != GROUP_COUNT) {
+            return builder;
+        }
         String name = matcher.group(1);
         String url = matcher.group(2);
 

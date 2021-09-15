@@ -1,12 +1,12 @@
 {
     "links": {
-        "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it",
-        "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/checkout.json"
+        "self": "https://api.integration.oscato.com/pci/v1/6140afa1cd6887052d02c200l62mor9bihq2bslqck7f0ev6r2",
+        "lang": "https://resources.integration.oscato.com/resource/lang/ANDROID_TESTING/en_US/checkout.json"
     },
-    "timestamp": "2021-04-14T09:16:46.796+0000",
+    "timestamp": "2021-09-14T14:20:17.385+0000",
     "operation": "LIST",
     "resultCode": "00000.11.000",
-    "resultInfo": "17 applicable and 0 registered networks are found",
+    "resultInfo": "5 applicable and 0 registered networks are found",
     "returnCode": {
         "name": "OK",
         "source": "GATEWAY"
@@ -20,9 +20,9 @@
         "reason": "OK"
     },
     "identification": {
-        "longId": "6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it",
-        "shortId": "05753-51161",
-        "transactionId": "20678"
+        "longId": "6140afa1cd6887052d02c200l62mor9bihq2bslqck7f0ev6r2",
+        "shortId": "02403-57111",
+        "transactionId": "22328"
     },
     "extraElements": {
         "top": [
@@ -40,67 +40,49 @@
             }
         ]
     },
-    "accounts": [
-        {
-            "links": {
-                "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/visa.png",
-                "self": "https://api.integration.oscato.com/pci/v1/60e6dd2ea810a1056f2e61f8ln168uoiirm5jlf2osnn56t2bn/accounts/60e6dcafa810a11363d303b3a",
-                "lang": "https://resources.integration.oscato.com/resource/lang/ANDROID_TESTING/en_US/VISA.json",
-                "operation": "https://api.integration.oscato.com/pci/v1/60e6dd2ea810a1056f2e61f8ln168uoiirm5jlf2osnn56t2bn/accounts/60e6dcafa810a11363d303b3a/charge",
-                "validation": "https://api.integration.oscato.com/pci/v1/60e6dd2ea810a1056f2e61f8ln168uoiirm5jlf2osnn56t2bn/ANDROID_TESTING/en_US/VISA/standard/validate"
-            },
-            "id": "60e6dcafa810a11363d303b3a",
-            "code": "VISA",
-            "label": "Visa",
-            "method": "CREDIT_CARD",
-            "maskedAccount": {
-                "displayLabel": "41 *** 1111    02 | 2022",
-                "holderName": "Thomas Smith",
-                "number": "41 *** 1111",
-                "expiryMonth": 2,
-                "expiryYear": 2022
-            },
-            "selected": false,
-            "createdAt": "2021-07-08T11:08:31.381+0000",
-            "inputElements": [
-                {
-                    "name": "verificationCode",
-                    "type": "integer"
-                }
-            ],
-            "operationType": "CHARGE",
-            "deferral": "NON_DEFERRED"
-        },
-        {
-            "links": {
-                "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/paypal.png",
-                "self": "https://api.integration.oscato.com/pci/v1/60e6dd2ea810a1056f2e61f8ln168uoiirm5jlf2osnn56t2bn/accounts/60e6b06fa810a11363d302d1a",
-                "lang": "https://resources.integration.oscato.com/resource/lang/ANDROID_TESTING/en_US/PAYPAL.json",
-                "operation": "https://api.integration.oscato.com/pci/v1/60e6dd2ea810a1056f2e61f8ln168uoiirm5jlf2osnn56t2bn/accounts/60e6b06fa810a11363d302d1a/charge",
-                "validation": "https://api.integration.oscato.com/pci/v1/60e6dd2ea810a1056f2e61f8ln168uoiirm5jlf2osnn56t2bn/ANDROID_TESTING/en_US/PAYPAL/standard/validate"
-            },
-            "id": "60e6b06fa810a11363d302d1a",
-            "code": "PAYPAL",
-            "label": "PayPal",
-            "method": "WALLET",
-            "maskedAccount": {
-                "displayLabel": "john.doe@example.com",
-                "number": "-1116351980",
-                "login": "john.doe@example.com"
-            },
-            "selected": false,
-            "createdAt": "2021-07-08T07:59:43.306+0000",
-            "contractData": {
-                "PAGE_ENVIRONMENT": "sandbox",
-                "JAVASCRIPT_INTEGRATION": "false",
-                "PAGE_BUTTON_LOCALE": "en_US"
-            },
-            "operationType": "CHARGE",
-            "deferral": "NON_DEFERRED"
-        }
-    ],
     "networks": {
         "applicable": [
+            {
+                "code": "VISA",
+                "label": "Visa",
+                "method": "CREDIT_CARD",
+                "grouping": "CREDIT_CARD",
+                "registration": "OPTIONAL",
+                "recurrence": "NONE",
+                "redirect": false,
+                "links": {
+                    "logo": "https://resources.integration.oscato.com/resource/network/ANDROID_TESTING/en_US/VISA/logo3x.png",
+                    "self": "https://api.integration.oscato.com/pci/v1/6140afa1cd6887052d02c200l62mor9bihq2bslqck7f0ev6r2/VISA",
+                    "lang": "https://resources.integration.oscato.com/resource/lang/ANDROID_TESTING/en_US/VISA.json",
+                    "operation": "https://api.integration.oscato.com/pci/v1/6140afa1cd6887052d02c200l62mor9bihq2bslqck7f0ev6r2/VISA/charge",
+                    "validation": "https://api.integration.oscato.com/pci/v1/6140afa1cd6887052d02c200l62mor9bihq2bslqck7f0ev6r2/ANDROID_TESTING/en_US/VISA/standard/validate"
+                },
+                "selected": false,
+                "inputElements": [
+                    {
+                        "name": "number",
+                        "type": "numeric"
+                    },
+                    {
+                        "name": "expiryMonth",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "expiryYear",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "verificationCode",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "holderName",
+                        "type": "string"
+                    }
+                ],
+                "operationType": "CHARGE",
+                "deferral": "NON_DEFERRED"
+            },
             {
                 "code": "AMEX",
                 "label": "American Express",
@@ -110,11 +92,11 @@
                 "recurrence": "NONE",
                 "redirect": false,
                 "links": {
-                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/amex.png",
-                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/AMEX",
-                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/AMEX.json",
-                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/AMEX/charge",
-                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/AMEX/standard/validate"
+                    "logo": "https://resources.integration.oscato.com/resource/network/ANDROID_TESTING/en_US/AMEX/logo3x.png",
+                    "self": "https://api.integration.oscato.com/pci/v1/6140afa1cd6887052d02c200l62mor9bihq2bslqck7f0ev6r2/AMEX",
+                    "lang": "https://resources.integration.oscato.com/resource/lang/ANDROID_TESTING/en_US/AMEX.json",
+                    "operation": "https://api.integration.oscato.com/pci/v1/6140afa1cd6887052d02c200l62mor9bihq2bslqck7f0ev6r2/AMEX/charge",
+                    "validation": "https://api.integration.oscato.com/pci/v1/6140afa1cd6887052d02c200l62mor9bihq2bslqck7f0ev6r2/ANDROID_TESTING/en_US/AMEX/standard/validate"
                 },
                 "selected": false,
                 "inputElements": [
@@ -139,151 +121,8 @@
                         "type": "string"
                     }
                 ],
-                "operationType": "CHARGE"
-            },
-            {
-                "code": "DINERS",
-                "label": "Diners Club",
-                "method": "CREDIT_CARD",
-                "grouping": "CREDIT_CARD",
-                "registration": "OPTIONAL",
-                "recurrence": "NONE",
-                "redirect": false,
-                "links": {
-                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/diners.png",
-                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/DINERS",
-                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/DINERS.json",
-                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/DINERS/charge",
-                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/DINERS/standard/validate"
-                },
-                "selected": false,
-                "inputElements": [
-                    {
-                        "name": "number",
-                        "type": "numeric"
-                    },
-                    {
-                        "name": "expiryMonth",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "expiryYear",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "verificationCode",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "holderName",
-                        "type": "string"
-                    }
-                ],
-                "operationType": "CHARGE"
-            },
-            {
-                "code": "DISCOVER",
-                "label": "Discover",
-                "method": "CREDIT_CARD",
-                "grouping": "CREDIT_CARD",
-                "registration": "OPTIONAL",
-                "recurrence": "NONE",
-                "redirect": false,
-                "links": {
-                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/discover.png",
-                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/DISCOVER",
-                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/DISCOVER.json",
-                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/DISCOVER/charge",
-                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/DISCOVER/standard/validate"
-                },
-                "selected": false,
-                "inputElements": [
-                    {
-                        "name": "number",
-                        "type": "numeric"
-                    },
-                    {
-                        "name": "expiryMonth",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "expiryYear",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "verificationCode",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "holderName",
-                        "type": "string"
-                    }
-                ],
-                "operationType": "CHARGE"
-            },
-            {
-                "code": "IDEAL",
-                "label": "iDEAL",
-                "method": "ONLINE_BANK_TRANSFER",
-                "grouping": "ONLINE_BANK_TRANSFER",
-                "registration": "OPTIONAL",
-                "recurrence": "NONE",
-                "redirect": true,
-                "links": {
-                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/ideal.png",
-                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/IDEAL",
-                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/IDEAL.json",
-                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/IDEAL/charge",
-                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/IDEAL/standard/validate"
-                },
-                "selected": false,
-                "inputElements": [
-                    {
-                        "name": "bic",
-                        "type": "string"
-                    }
-                ],
-                "operationType": "CHARGE"
-            },
-            {
-                "code": "MAESTRO",
-                "label": "Maestro",
-                "method": "DEBIT_CARD",
-                "grouping": "DEBIT_CARD",
-                "registration": "OPTIONAL",
-                "recurrence": "NONE",
-                "redirect": false,
-                "links": {
-                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/maestro.png",
-                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MAESTRO",
-                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/MAESTRO.json",
-                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MAESTRO/charge",
-                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/MAESTRO/standard/validate"
-                },
-                "selected": false,
-                "inputElements": [
-                    {
-                        "name": "holderName",
-                        "type": "string"
-                    },
-                    {
-                        "name": "number",
-                        "type": "numeric"
-                    },
-                    {
-                        "name": "expiryYear",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "expiryMonth",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "verificationCode",
-                        "type": "integer"
-                    }
-                ],
-                "operationType": "CHARGE"
+                "operationType": "CHARGE",
+                "deferral": "NON_DEFERRED"
             },
             {
                 "code": "MASTERCARD",
@@ -294,11 +133,11 @@
                 "recurrence": "NONE",
                 "redirect": false,
                 "links": {
-                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/mastercard.png",
-                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MASTERCARD",
-                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/MASTERCARD.json",
-                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MASTERCARD/charge",
-                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/MASTERCARD/standard/validate"
+                    "logo": "https://resources.integration.oscato.com/resource/network/ANDROID_TESTING/en_US/MASTERCARD/logo3x.png",
+                    "self": "https://api.integration.oscato.com/pci/v1/6140afa1cd6887052d02c200l62mor9bihq2bslqck7f0ev6r2/MASTERCARD",
+                    "lang": "https://resources.integration.oscato.com/resource/lang/ANDROID_TESTING/en_US/MASTERCARD.json",
+                    "operation": "https://api.integration.oscato.com/pci/v1/6140afa1cd6887052d02c200l62mor9bihq2bslqck7f0ev6r2/MASTERCARD/charge",
+                    "validation": "https://api.integration.oscato.com/pci/v1/6140afa1cd6887052d02c200l62mor9bihq2bslqck7f0ev6r2/ANDROID_TESTING/en_US/MASTERCARD/standard/validate"
                 },
                 "selected": false,
                 "inputElements": [
@@ -323,138 +162,8 @@
                         "type": "string"
                     }
                 ],
-                "operationType": "CHARGE"
-            },
-            {
-                "code": "MISTERCASH",
-                "label": "Bancontact/Mister Cash",
-                "method": "DEBIT_CARD",
-                "grouping": "DEBIT_CARD",
-                "registration": "OPTIONAL",
-                "recurrence": "NONE",
-                "redirect": false,
-                "links": {
-                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/mistercash.png",
-                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MISTERCASH",
-                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/MISTERCASH.json",
-                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MISTERCASH/charge",
-                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/MISTERCASH/standard/validate"
-                },
-                "selected": false,
-                "inputElements": [
-                    {
-                        "name": "number",
-                        "type": "numeric"
-                    },
-                    {
-                        "name": "expiryYear",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "expiryMonth",
-                        "type": "integer"
-                    }
-                ],
-                "operationType": "CHARGE"
-            },
-            {
-                "code": "PAYFAST",
-                "label": "PayFast",
-                "method": "WALLET",
-                "grouping": "WALLET",
-                "registration": "NONE",
-                "recurrence": "NONE",
-                "redirect": true,
-                "links": {
-                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/payfast.png",
-                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/PAYFAST",
-                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/PAYFAST.json",
-                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/PAYFAST/charge",
-                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/PAYFAST/standard/validate"
-                },
-                "selected": false,
-                "operationType": "CHARGE"
-            },
-            {
-                "code": "PAYPAL",
-                "label": "PayPal",
-                "method": "WALLET",
-                "grouping": "WALLET",
-                "registration": "OPTIONAL",
-                "recurrence": "NONE",
-                "redirect": true,
-                "links": {
-                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/paypal.png",
-                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/PAYPAL",
-                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/PAYPAL.json",
-                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/PAYPAL/charge",
-                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/PAYPAL/standard/validate"
-                },
-                "selected": false,
-                "contractData": {
-                    "PAGE_ENVIRONMENT": "sandbox",
-                    "JAVASCRIPT_INTEGRATION": "false",
-                    "PAGE_BUTTON_LOCALE": "en_US"
-                },
-                "operationType": "CHARGE"
-            },
-            {
-                "code": "POSTEPAY",
-                "label": "PostePay",
-                "method": "DEBIT_CARD",
-                "grouping": "DEBIT_CARD",
-                "registration": "OPTIONAL",
-                "recurrence": "NONE",
-                "redirect": false,
-                "links": {
-                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/postepay.png",
-                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/POSTEPAY",
-                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/POSTEPAY.json",
-                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/POSTEPAY/charge",
-                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/POSTEPAY/standard/validate"
-                },
-                "selected": false,
-                "inputElements": [
-                    {
-                        "name": "holderName",
-                        "type": "string"
-                    },
-                    {
-                        "name": "number",
-                        "type": "numeric"
-                    },
-                    {
-                        "name": "expiryYear",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "expiryMonth",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "verificationCode",
-                        "type": "integer"
-                    }
-                ],
-                "operationType": "CHARGE"
-            },
-            {
-                "code": "RATEPAY",
-                "label": "RatePAY Invoice",
-                "method": "OPEN_INVOICE",
-                "grouping": "OPEN_INVOICE",
-                "registration": "NONE",
-                "recurrence": "NONE",
-                "redirect": false,
-                "links": {
-                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/ratepay.png",
-                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/RATEPAY",
-                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/RATEPAY.json",
-                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/RATEPAY/charge",
-                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/RATEPAY/standard/validate"
-                },
-                "selected": false,
-                "operationType": "CHARGE"
+                "operationType": "CHARGE",
+                "deferral": "NON_DEFERRED"
             },
             {
                 "code": "SEPADD",
@@ -465,11 +174,11 @@
                 "recurrence": "NONE",
                 "redirect": false,
                 "links": {
-                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/sepadd.png",
-                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/SEPADD",
-                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/SEPADD.json",
-                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/SEPADD/charge",
-                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/SEPADD/standard/validate"
+                    "logo": "https://resources.integration.oscato.com/resource/network/ANDROID_TESTING/en_US/SEPADD/logo3x.png",
+                    "self": "https://api.integration.oscato.com/pci/v1/6140afa1cd6887052d02c200l62mor9bihq2bslqck7f0ev6r2/SEPADD",
+                    "lang": "https://resources.integration.oscato.com/resource/lang/ANDROID_TESTING/en_US/SEPADD.json",
+                    "operation": "https://api.integration.oscato.com/pci/v1/6140afa1cd6887052d02c200l62mor9bihq2bslqck7f0ev6r2/SEPADD/charge",
+                    "validation": "https://api.integration.oscato.com/pci/v1/6140afa1cd6887052d02c200l62mor9bihq2bslqck7f0ev6r2/ANDROID_TESTING/en_US/SEPADD/standard/validate"
                 },
                 "selected": false,
                 "inputElements": [
@@ -486,195 +195,43 @@
                         "type": "string"
                     }
                 ],
-                "operationType": "CHARGE"
+                "operationType": "CHARGE",
+                "deferral": "NON_DEFERRED"
             },
             {
-                "code": "SOFORTUEBERWEISUNG",
-                "label": "Online Bank Transfer",
-                "method": "ONLINE_BANK_TRANSFER",
-                "grouping": "ONLINE_BANK_TRANSFER",
-                "registration": "NONE",
+                "code": "PAYPAL",
+                "label": "PayPal",
+                "method": "WALLET",
+                "grouping": "WALLET",
+                "registration": "OPTIONAL",
                 "recurrence": "NONE",
                 "redirect": true,
                 "links": {
-                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/sofort.png",
-                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/SOFORTUEBERWEISUNG",
-                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/SOFORTUEBERWEISUNG.json",
-                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/SOFORTUEBERWEISUNG/charge",
-                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/SOFORTUEBERWEISUNG/standard/validate"
+                    "logo": "https://resources.integration.oscato.com/resource/network/ANDROID_TESTING/en_US/PAYPAL/logo3x.png",
+                    "self": "https://api.integration.oscato.com/pci/v1/6140afa1cd6887052d02c200l62mor9bihq2bslqck7f0ev6r2/PAYPAL",
+                    "lang": "https://resources.integration.oscato.com/resource/lang/ANDROID_TESTING/en_US/PAYPAL.json",
+                    "operation": "https://api.integration.oscato.com/pci/v1/6140afa1cd6887052d02c200l62mor9bihq2bslqck7f0ev6r2/PAYPAL/charge",
+                    "validation": "https://api.integration.oscato.com/pci/v1/6140afa1cd6887052d02c200l62mor9bihq2bslqck7f0ev6r2/ANDROID_TESTING/en_US/PAYPAL/standard/validate"
                 },
                 "selected": false,
-                "operationType": "CHARGE"
-            },
-            {
-                "code": "UNIONPAY",
-                "label": "UnionPay",
-                "method": "CREDIT_CARD",
-                "grouping": "CREDIT_CARD",
-                "registration": "OPTIONAL",
-                "recurrence": "NONE",
-                "redirect": false,
-                "links": {
-                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/unionpay.png",
-                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/UNIONPAY",
-                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/UNIONPAY.json",
-                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/UNIONPAY/charge",
-                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/UNIONPAY/standard/validate"
+                "contractData": {
+                    "PAGE_ENVIRONMENT": "sandbox",
+                    "JAVASCRIPT_INTEGRATION": "false",
+                    "PAGE_BUTTON_LOCALE": "en_US"
                 },
-                "selected": false,
-                "inputElements": [
-                    {
-                        "name": "number",
-                        "type": "numeric"
-                    },
-                    {
-                        "name": "expiryMonth",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "expiryYear",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "verificationCode",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "holderName",
-                        "type": "string"
-                    }
-                ],
-                "operationType": "CHARGE"
-            },
-            {
-                "code": "VISA",
-                "label": "Visa",
-                "method": "CREDIT_CARD",
-                "grouping": "CREDIT_CARD",
-                "registration": "OPTIONAL",
-                "recurrence": "NONE",
-                "redirect": false,
-                "links": {
-                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/visa.png",
-                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/VISA",
-                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/VISA.json",
-                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/VISA/charge",
-                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/VISA/standard/validate"
-                },
-                "selected": false,
-                "inputElements": [
-                    {
-                        "name": "number",
-                        "type": "numeric"
-                    },
-                    {
-                        "name": "expiryMonth",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "expiryYear",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "verificationCode",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "holderName",
-                        "type": "string"
-                    }
-                ],
-                "operationType": "CHARGE"
-            },
-            {
-                "code": "VISAELECTRON",
-                "label": "Visa Electron",
-                "method": "DEBIT_CARD",
-                "grouping": "DEBIT_CARD",
-                "registration": "OPTIONAL",
-                "recurrence": "NONE",
-                "redirect": false,
-                "links": {
-                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/visaelectron.png",
-                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/VISAELECTRON",
-                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/VISAELECTRON.json",
-                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/VISAELECTRON/charge",
-                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/VISAELECTRON/standard/validate"
-                },
-                "selected": false,
-                "inputElements": [
-                    {
-                        "name": "holderName",
-                        "type": "string"
-                    },
-                    {
-                        "name": "number",
-                        "type": "numeric"
-                    },
-                    {
-                        "name": "expiryYear",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "expiryMonth",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "verificationCode",
-                        "type": "integer"
-                    }
-                ],
-                "operationType": "CHARGE"
-            },
-            {
-                "code": "VISA_DANKORT",
-                "label": "Visa Dankort",
-                "method": "DEBIT_CARD",
-                "grouping": "DEBIT_CARD",
-                "registration": "OPTIONAL",
-                "recurrence": "NONE",
-                "redirect": false,
-                "links": {
-                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/visa_dankort.png",
-                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/VISA_DANKORT",
-                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/VISA_DANKORT.json",
-                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/VISA_DANKORT/charge",
-                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/VISA_DANKORT/standard/validate"
-                },
-                "selected": false,
-                "inputElements": [
-                    {
-                        "name": "number",
-                        "type": "numeric"
-                    },
-                    {
-                        "name": "expiryMonth",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "expiryYear",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "verificationCode",
-                        "type": "integer"
-                    },
-                    {
-                        "name": "holderName",
-                        "type": "string"
-                    }
-                ],
-                "operationType": "CHARGE"
+                "operationType": "CHARGE",
+                "deferral": "NON_DEFERRED"
             }
         ]
     },
     "operationType": "CHARGE",
+    "allowDelete": true,
     "style": {
         "language": "en_US"
     },
     "payment": {
-        "reference": "Mobile Team Exercise",
-        "amount": 13,
+        "reference": "PM Checkout Example",
+        "amount": 15,
         "currency": "EUR"
     },
     "integrationType": "MOBILE_NATIVE"
