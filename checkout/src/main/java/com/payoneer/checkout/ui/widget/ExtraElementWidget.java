@@ -13,8 +13,6 @@ import com.payoneer.checkout.form.Operation;
 import com.payoneer.checkout.model.CheckboxMode;
 import com.payoneer.checkout.model.ExtraElement;
 
-import android.util.Log;
-
 /**
  * Widget for showing the ExtraElement element
  */
