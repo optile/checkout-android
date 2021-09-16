@@ -10,8 +10,7 @@ package com.payoneer.checkout.ui.list;
 
 
 import static com.payoneer.checkout.core.PaymentInputCategory.REGISTRATION;
-import static com.payoneer.checkout.core.PaymentInputType.ALLOW_RECURRENCE;
-import static com.payoneer.checkout.core.PaymentInputType.AUTO_REGISTRATION;
+import static com.payoneer.checkout.core.PaymentInputType.REGISTRATION_OPTIONS;
 
 import com.payoneer.checkout.R;
 import com.payoneer.checkout.ui.model.NetworkCard;
@@ -43,7 +42,7 @@ final class NetworkCardViewHolder extends PaymentCardViewHolder {
             addNetworkLogosWidget();
         }
         addInputElementWidgets(networkCard.getInputElements());
-        addRegistrationWidgets();
+        addRegistrationWidget();
         addExtraElementWidgets(networkCard.getBottomExtraElements());
         addButtonWidget();
 
@@ -70,10 +69,8 @@ final class NetworkCardViewHolder extends PaymentCardViewHolder {
         }
         PaymentNetwork network = networkCard.getVisibleNetwork();
         for (FormWidget widget : widgets.values()) {
-            if (widget.matches(REGISTRATION, AUTO_REGISTRATION)) {
-                ((RegistrationWidget) widget).onBind(network.getAutoRegistration());
-            } else if (widget.matches(REGISTRATION, ALLOW_RECURRENCE)) {
-                ((RegistrationWidget) widget).onBind(network.getAllowRecurrence());
+            if (widget.matches(REGISTRATION, REGISTRATION_OPTIONS)) {
+                ((RegistrationWidget) widget).onBind(network.getRegistrationOptions());
             } else if (widget.matches(UIELEMENT, NETWORKLOGOS)) {
                 bindNetworkLogosWidget((NetworkLogosWidget) widget, networkCard);
             } else {
@@ -102,8 +99,7 @@ final class NetworkCardViewHolder extends PaymentCardViewHolder {
         putFormWidget(widget);
     }
 
-    private void addRegistrationWidgets() {
-        putFormWidget(new RegistrationWidget(REGISTRATION, AUTO_REGISTRATION));
-        putFormWidget(new RegistrationWidget(REGISTRATION, ALLOW_RECURRENCE));
+    private void addRegistrationWidget() {
+        putFormWidget(new RegistrationWidget(REGISTRATION, REGISTRATION_OPTIONS));
     }
 }

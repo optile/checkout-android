@@ -42,7 +42,7 @@ import com.payoneer.checkout.ui.model.PaymentNetwork;
 import com.payoneer.checkout.ui.model.PaymentSection;
 import com.payoneer.checkout.ui.model.PaymentSession;
 import com.payoneer.checkout.ui.model.PresetCard;
-import com.payoneer.checkout.ui.model.RegistrationOption;
+import com.payoneer.checkout.ui.model.RegistrationOptions;
 import com.payoneer.checkout.util.PaymentUtils;
 
 import android.text.TextUtils;
@@ -216,7 +216,7 @@ public final class PaymentSessionBuilder {
         return new PaymentSection(labelKey, new ArrayList<>(cards.values()));
     }
 
-    private Map<String, PaymentNetwork> buildPaymentNetworks(ListResult listResult) {
+    private Map<String, PaymentNetwork> buildPaymentNetworks(ListResult listResult) throws PaymentException {
         LinkedHashMap<String, PaymentNetwork> items = new LinkedHashMap<>();
         Networks nw = listResult.getNetworks();
 
@@ -248,18 +248,15 @@ public final class PaymentSessionBuilder {
         return NetworkServiceLookup.supports(network.getCode(), network.getMethod());
     }
 
-    private PaymentNetwork buildPaymentNetwork(ApplicableNetwork network) {
+    private PaymentNetwork buildPaymentNetwork(ApplicableNetwork network) throws PaymentException {
         String operationType = network.getOperationType();
         String buttonKey = LocalizationKey.operationButtonKey(operationType);
 
-        RegistrationOptionsBuilder builder = new RegistrationOptionsBuilder()
+        RegistrationOptions options = new RegistrationOptionsBuilder()
             .setOperationType(operationType)
-            .setAutoRegistration(network.getRegistration())
-            .setAllowRecurrence(network.getRecurrence());
-
-        RegistrationOption registration = builder.buildAutoRegistrationOption();
-        RegistrationOption recurrence = builder.buildAllowRecurrenceOption();
-        return new PaymentNetwork(network, buttonKey, registration, recurrence);
+            .setRegistrationOptions(network.getRegistration(), network.getRecurrence())
+            .buildRegistrationOptions();
+        return new PaymentNetwork(network, buttonKey, options);
     }
 
     private void addNetwork2SingleCard(Map<String, NetworkCard> cards, PaymentNetwork network, ListResult listResult) {

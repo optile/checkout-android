@@ -21,6 +21,7 @@ import static com.payoneer.checkout.localization.LocalizationKey.LIST_HEADER_ACC
 import static com.payoneer.checkout.localization.LocalizationKey.LIST_HEADER_NETWORKS_UPDATE;
 import static com.payoneer.checkout.localization.LocalizationKey.MESSAGES_UNSAVED_TEXT;
 import static com.payoneer.checkout.localization.LocalizationKey.MESSAGES_UNSAVED_TITLE;
+import static com.payoneer.checkout.localization.LocalizationKey.NETWORKS_REGISTRATION_LABEL;
 
 import java.util.HashMap;
 
@@ -56,5 +57,7 @@ public final class LocalLocalizationHolder extends MapLocalizationHolder {
 
         map.put(MESSAGES_UNSAVED_TITLE, context.getString(R.string.messages_unsaved_title));
         map.put(MESSAGES_UNSAVED_TEXT, context.getString(R.string.messages_unsaved_text));
+
+        map.put(NETWORKS_REGISTRATION_LABEL, context.getString(R.string.networks_registration_label));
     }
 }

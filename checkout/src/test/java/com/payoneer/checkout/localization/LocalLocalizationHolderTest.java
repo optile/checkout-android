@@ -34,5 +34,7 @@ public class LocalLocalizationHolderTest {
 
         assertNotNull(holder.translate(LocalizationKey.LIST_HEADER_ACCOUNTS_UPDATE));
         assertNotNull(holder.translate(LocalizationKey.LIST_HEADER_NETWORKS_UPDATE));
+
+        assertNotNull(holder.translate(LocalizationKey.NETWORKS_REGISTRATION_LABEL));
     }
 }

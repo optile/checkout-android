@@ -24,6 +24,7 @@
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/switch_checkbox"
+        android:layout_marginLeft="@dimen/pmborder_xsmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

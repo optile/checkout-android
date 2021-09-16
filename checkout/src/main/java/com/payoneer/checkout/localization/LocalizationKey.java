@@ -15,10 +15,7 @@ import com.payoneer.checkout.model.Interaction;
  */
 public final class LocalizationKey {
 
-    public final static String AUTO_REGISTRATION_OPTIONAL = "networks.registration.optional.label";
-    public final static String AUTO_REGISTRATION_FORCED = "networks.registration.forced.label";
-    public final static String ALLOW_RECURRENCE_OPTIONAL = "networks.recurrence.optional.label";
-    public final static String ALLOW_RECURRENCE_FORCED = "networks.recurrence.forced.label";
+    public final static String NETWORKS_REGISTRATION_LABEL = "networks.registration.label";
 
     public final static String BUTTON_OK = "button.ok.label";
     public final static String BUTTON_CANCEL = "button.cancel.label";

@@ -17,6 +17,7 @@
 
     <string name="list_header_accounts_update">Edit your payment methods</string>
     <string name="list_header_networks_update">Add a payment method</string>
+    <string name="networks_registration_label">I authorize saving this payment method for future purchases</string>
 
 
 </resources>

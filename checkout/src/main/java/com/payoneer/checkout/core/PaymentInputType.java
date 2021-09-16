@@ -38,6 +38,7 @@ public class PaymentInputType {
     public final static String INSTALLMENT_PLANID = "installmentPlanId";
     public final static String ALLOW_RECURRENCE = "allowRecurrence";
     public final static String AUTO_REGISTRATION = "autoRegistration";
+    public final static String REGISTRATION_OPTIONS = "registrationOptions";
 
     /**
      * Check if the given type is a valid payment input type
